@@ -10,7 +10,7 @@ VERBOSE=0
 BASE_DIR=${HOME}/.rs
 LEVEL1_DIR=${BASE_DIR}/`echo ${PWD} | $MD5_BIN | cut -b -4`
 LEVEL2_DIR=${LEVEL1_DIR}/`echo $* | $MD5_BIN | cut -b -8`
-FILENAME=${LEVEL2_DIR}/`echo ${PWD} $* | $MD5_BIN`
+FILENAME=${LEVEL2_DIR}/`echo ${PWD} $* | $MD5_BIN | cut -d ' ' -f 1`
 MAX_NO_LINES=0
 NO_LINES=1
 
